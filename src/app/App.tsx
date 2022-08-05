@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Ball from './components/ball/ball';
-import Selector from './components/selector/selector';
+import Ball from '../components/ball/ball';
+import Selector from '../components/selector/selector';
 
 const Background = styled.div`
   background-color: #6befa3;

@@ -1,8 +1,5 @@
-import { Select } from 'antd';
 import { useEffect, useState } from 'react';
-import { getLoterias } from '../../../services/requests/get-loterias';
-
-const { Option } = Select;
+import { getLoterias } from '../../services/requests/get-loterias';
 
 interface Sort {
   id: number;
@@ -10,10 +7,6 @@ interface Sort {
 }
 
 export default function Selector(): JSX.Element {
-  const handleChange = (value: string): void => {
-    console.log(`selected ${value}`);
-  };
-
   const [typesOfSort, setTypesOfSort] = useState<Sort[]>();
 
   useEffect(() => {
@@ -31,7 +24,7 @@ export default function Selector(): JSX.Element {
         {typesOfSort &&
           typesOfSort.map((loteria) => (
             <option key={loteria.id} value={loteria.id}>
-              {loteria.nome.charAt(0).toUpperCase() + loteria.nome.substring(1)}
+              {loteria.nome.toUpperCase()}
             </option>
           ))}
       </select>
