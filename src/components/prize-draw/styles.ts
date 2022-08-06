@@ -7,4 +7,8 @@ export const Organization = styled.div`
     width: 90%;
     
   }
+  @media only screen and (min-width: 600px) {
+    padding: 4rem;
+    width: 90%;
+  }
 `;

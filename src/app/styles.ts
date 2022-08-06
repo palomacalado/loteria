@@ -7,6 +7,26 @@ export const Image = styled.img`
   @media only screen and (max-width: 480px) {
     padding:0;
 `;
+export const Mensage = styled.div`
+  position: absolute;
+  bottom: 20%;
+  right: 27%;
+  text-align: center;
+  @media only screen and (max-width: 480px) {
+    bottom: 3%;
+    left: 0%;
+    right: 0%;
+  }
+  @media only screen and (width: 600px) {
+    left: 20%;
+    right: 0%;
+  }
+  @media only screen and (width: 1240px) {
+    left: 40%;
+    right: 0%;
+    bottom: 11%;
+  }
+`;
 
 export const Background = styled.div`
   background-color: ${(props) => props.color};
