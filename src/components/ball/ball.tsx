@@ -13,11 +13,13 @@ const UniqueBall = styled.div`
   justify-content: center;
   font-size: 24px;
   position: relative;
+  margin: 5px;
 `;
 const Balls = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
   align: center;
   width: 80%;
