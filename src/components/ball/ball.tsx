@@ -12,13 +12,15 @@ const UniqueBall = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 24px;
+  position: relative;
 `;
 const Balls = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   align: center;
-  width: 50%;
+  width: 80%;
 `;
 export default function Ball(): JSX.Element {
   const { ball } = useContext(BallContext);

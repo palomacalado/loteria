@@ -1,4 +1,5 @@
 import { useContext, useEffect } from 'react';
+import styled from 'styled-components';
 import { BallContext } from '../../contexts/balls';
 import { ReflleContext } from '../../contexts/reflle';
 import { getConcursos } from '../../services/requests/get-concursos';
@@ -23,14 +24,16 @@ export default function PrizeDraw(): JSX.Element {
         let index = 0;
         const reflleNumbers = [];
         const allIndex = [0];
-        for (let i = 0; i < 6; i += 1) {
+        let numbersOfBalls = 6;
+        if (contestId === '5534') numbersOfBalls = 5;
+        for (let i = 0; i < numbersOfBalls; i += 1) {
           index = Math.ceil(Math.random() * data.numeros.length + 1);
           while (allIndex.indexOf(index) >= 0) {
             index = Math.ceil(Math.random() * data.numeros.length + 1);
           }
           allIndex.push(index);
         }
-        for (let i = 1; i < 7; i += 1) {
+        for (let i = 1; i < numbersOfBalls + 1; i += 1) {
           reflleNumbers.push(allIndex[i]);
         }
         setBall(reflleNumbers);

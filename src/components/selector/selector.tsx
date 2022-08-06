@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { Select } from 'antd';
+import styled from 'styled-components';
 import { ColorContext } from '../../contexts/color-reffle';
 import { getLoterias } from '../../services/requests/get-loterias';
 import { ReflleContext } from '../../contexts/reflle';
@@ -16,6 +17,10 @@ interface Raffle {
   nome: string;
 }
 const { Option } = Select;
+
+const Content = styled.div`
+  padding: 5rem;
+`;
 
 export default function Selector(): JSX.Element {
   const [typesOfRaffle, setTypesOfRaffle] = useState<Raffle[]>();
@@ -69,9 +74,14 @@ export default function Selector(): JSX.Element {
   };
 
   return (
-    <div>
+    <Content>
       {typesOfRaffle && (
-        <Select style={{ width: 120 }} onChange={handleChange} id="raffle">
+        <Select
+          defaultValue={{ value: '0', label: 'MEGA-SENA' }}
+          style={{ width: 170 }}
+          onChange={handleChange}
+          id="raffle"
+        >
           {typesOfRaffle.map((raffle) => (
             <Option key={raffle.id} value={raffle.id}>
               {raffle.nome.toUpperCase()}
@@ -79,6 +89,6 @@ export default function Selector(): JSX.Element {
           ))}
         </Select>
       )}
-    </div>
+    </Content>
   );
 }
