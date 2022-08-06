@@ -9,7 +9,7 @@ type BallContextType = {
   setBall: (newState: number[]) => void;
 };
 const initialValue = {
-  ball: [0, 0, 0, 0, 0, 0],
+  ball: [],
   setBall: () => null,
 };
 

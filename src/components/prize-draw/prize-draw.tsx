@@ -30,8 +30,8 @@ export default function PrizeDraw(): JSX.Element {
           }
           allIndex.push(index);
         }
-        for (let i = 0; i < 6; i += 1) {
-          reflleNumbers.push(allIndex[i + 1]);
+        for (let i = 1; i < 7; i += 1) {
+          reflleNumbers.push(allIndex[i]);
         }
         setBall(reflleNumbers);
       });
