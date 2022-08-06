@@ -1,29 +1,7 @@
 import { useContext } from 'react';
-import styled from 'styled-components';
 import { BallContext } from '../../contexts/balls';
+import { UniqueBall, Balls } from './styles';
 
-const UniqueBall = styled.div`
-  border-radius: 50%;
-  background: white;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  position: relative;
-  margin: 5px;
-`;
-const Balls = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-  align: center;
-  width: 80%;
-`;
 export default function Ball(): JSX.Element {
   const { ball } = useContext(BallContext);
 

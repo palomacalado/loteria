@@ -1,15 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { ReflleContext } from '../../contexts/reflle';
 import { getConcursos } from '../../services/requests/get-concursos';
-
-const Information = styled.div`
-  padding: 5rem;
-  display: flex;
-  color: white;
-  flex-direction: column;
-  align-content: left;
-`;
+import { Information } from './styles';
 
 function ReflleInformation() {
   const { contestId } = useContext(ReflleContext);

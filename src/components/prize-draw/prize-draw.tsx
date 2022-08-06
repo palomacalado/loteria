@@ -1,15 +1,10 @@
 import { useContext, useEffect } from 'react';
-import styled from 'styled-components';
 import { BallContext } from '../../contexts/balls';
 import { ReflleContext } from '../../contexts/reflle';
 import { getConcursos } from '../../services/requests/get-concursos';
 import { getLoteriasConcursos } from '../../services/requests/get-loterias-concursos';
 import Ball from '../ball/ball';
-
-const Organization = styled.div`
-  width: 60%;
-  heigth 30%
-`;
+import { Organization } from './styles';
 
 export default function PrizeDraw(): JSX.Element {
   const { reflleId } = useContext(ReflleContext);

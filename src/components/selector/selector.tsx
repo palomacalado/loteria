@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
 import { Select } from 'antd';
-import styled from 'styled-components';
 import { ColorContext } from '../../contexts/color-reffle';
 import { getLoterias } from '../../services/requests/get-loterias';
 import { ReflleContext } from '../../contexts/reflle';
@@ -11,16 +10,13 @@ import lotofacil from '../../assets/lotofacil.png';
 import lotomania from '../../assets/lotomania.png';
 import quina from '../../assets/quina.png';
 import timemania from '../../assets/timemania.png';
+import { Content } from './styles';
 
 interface Raffle {
   id: number;
   nome: string;
 }
 const { Option } = Select;
-
-const Content = styled.div`
-  padding: 5rem;
-`;
 
 export default function Selector(): JSX.Element {
   const [typesOfRaffle, setTypesOfRaffle] = useState<Raffle[]>();
