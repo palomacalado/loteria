@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
-import Ball from '../components/ball/ball';
+import PrizeDraw from '../components/prize-draw/prize-draw';
 import Selector from '../components/selector/selector';
 import { ColorContext } from '../contexts/color-reffle';
+import logo from '../assets/logo.png';
 
 const Background = styled.div`
   background-color: ${(props) => props.color};
@@ -16,7 +17,10 @@ function App(): JSX.Element {
   return (
     <Background color={backgroundColor}>
       <Selector />
-      <Ball number={3} />
+      <img src={logo} alt="logo da mega sena" />
+      <div>
+        <PrizeDraw />
+      </div>
     </Background>
   );
 }

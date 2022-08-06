@@ -5,6 +5,8 @@ import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 import 'antd/dist/antd.css';
 import { ColorContextProvider } from './contexts/color-reffle';
+import { ReflleContextProvider } from './contexts/reflle';
+import { BallContextProvider } from './contexts/balls';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -12,7 +14,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ColorContextProvider>
-      <App />
+      <ReflleContextProvider>
+        <BallContextProvider>
+          <App />
+        </BallContextProvider>
+      </ReflleContextProvider>
     </ColorContextProvider>
   </React.StrictMode>,
 );

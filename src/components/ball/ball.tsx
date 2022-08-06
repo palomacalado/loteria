@@ -1,4 +1,6 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+import { BallContext } from '../../contexts/balls';
 
 const UniqueBall = styled.div`
   border-radius: 50%;
@@ -11,6 +13,21 @@ const UniqueBall = styled.div`
   justify-content: center;
   font-size: 24px;
 `;
-export default function Ball({ number }: any): JSX.Element {
-  return <UniqueBall>{number}</UniqueBall>;
+const Balls = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align: center;
+  width: 50%;
+`;
+export default function Ball(): JSX.Element {
+  const { ball } = useContext(BallContext);
+
+  return (
+    <Balls>
+      {ball.map((number) => {
+        return <UniqueBall key={number}>{number}</UniqueBall>;
+      })}
+    </Balls>
+  );
 }
