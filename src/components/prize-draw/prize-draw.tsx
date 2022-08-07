@@ -48,17 +48,17 @@ export default function PrizeDraw(): JSX.Element {
         const reflleNumbers = [];
         const allIndex = [];
 
-        for (let i = 0; i < numbersOfBalls; i += 1) {
-          index = Math.ceil(Math.random() * data.numeros.length);
+        while (allIndex.length !== numbersOfBalls) {
+          index = Math.ceil(Math.random() * data.numeros.length - 1);
           while (allIndex.indexOf(index) >= 0) {
-            index = Math.ceil(Math.random() * data.numeros.length);
+            index = Math.ceil(Math.random() * data.numeros.length - 1);
           }
           allIndex.push(index);
-          console.log(allIndex);
         }
         for (let i = 0; i < numbersOfBalls; i += 1) {
           reflleNumbers.push(data.numeros[allIndex[i]]);
         }
+
         setBall(reflleNumbers);
       });
     });
