@@ -1,9 +1,11 @@
 import { createContext, useState, useMemo, ReactNode } from 'react';
 import megasena from '../assets/megasena.png';
+import megasenamobile from '../assets/senamobile.png';
 
 type ReflleContextProps = {
   children: ReactNode;
 };
+const largura = window.screen.width;
 
 type ReflleContextType = {
   reflleId: number;
@@ -18,7 +20,7 @@ const initialValue = {
   setReflleId: () => null,
   contestId: '2359',
   setContestId: () => null,
-  image: megasena,
+  image: largura > 600 ? megasena : megasenamobile,
   setImage: () => null,
 };
 

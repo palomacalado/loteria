@@ -51,11 +51,12 @@ export const Content = styled.div`
   justify-content: space-evenly;
   @media only screen and (max-width: 480px) {
     display: flex;
-    align-items: flex-start;
+
+    align-items: center;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     height: 50vh;
-    justify-content: center;
+    justify-content: space-evenly;
   }
 `;
 
