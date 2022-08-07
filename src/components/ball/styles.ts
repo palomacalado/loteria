@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const UniqueBall = styled.div`
   border-radius: 50%;
   background: white;
+  -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+  -moz-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+  box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
   width: 60px;
   height: 60px;
   display: flex;
