@@ -33,6 +33,24 @@ export default function PrizeDraw(): JSX.Element {
       numbersOfBalls = 6;
       break;
   }
+  function sortNumbers(list: number[]) {
+    let index = 0;
+    const reflleNumbers = [];
+    const allIndex = [];
+
+    while (allIndex.length !== numbersOfBalls) {
+      index = Math.ceil(Math.random() * list.length - 1);
+      while (allIndex.indexOf(index) >= 0) {
+        index = Math.ceil(Math.random() * list.length - 1);
+      }
+      allIndex.push(index);
+    }
+    for (let i = 0; i < numbersOfBalls; i += 1) {
+      reflleNumbers.push(list[allIndex[i]]);
+    }
+
+    return setBall(reflleNumbers);
+  }
 
   useEffect(() => {
     getLoteriasConcursos().then((response) => {
@@ -44,22 +62,7 @@ export default function PrizeDraw(): JSX.Element {
       });
 
       getConcursos(contestId).then((data) => {
-        let index = 0;
-        const reflleNumbers = [];
-        const allIndex = [];
-
-        while (allIndex.length !== numbersOfBalls) {
-          index = Math.ceil(Math.random() * data.numeros.length - 1);
-          while (allIndex.indexOf(index) >= 0) {
-            index = Math.ceil(Math.random() * data.numeros.length - 1);
-          }
-          allIndex.push(index);
-        }
-        for (let i = 0; i < numbersOfBalls; i += 1) {
-          reflleNumbers.push(data.numeros[allIndex[i]]);
-        }
-
-        setBall(reflleNumbers);
+        sortNumbers(data.numeros);
       });
     });
   }, [contestId, reflleId, setBall, setContestId]);

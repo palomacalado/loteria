@@ -8,6 +8,7 @@ import { ReflleContext } from '../../contexts/reflle';
 import megasena from '../../assets/megasena.png';
 import diadesorte from '../../assets/diadesorte.png';
 import lotofacil from '../../assets/lotofacil.png';
+
 import lotomania from '../../assets/lotomania.png';
 import quina from '../../assets/quina.png';
 import timemania from '../../assets/timemania.png';
@@ -79,13 +80,13 @@ export default function Selector(): JSX.Element {
   };
 
   return (
-    <Content>
+    <Content className="dropdown">
       {typesOfRaffle && (
         <Select
           defaultValue={{ value: '0', label: 'MEGA-SENA' }}
           style={{ width: 170 }}
           onChange={handleChange}
-          id="raffle"
+          id="raflle"
         >
           {typesOfRaffle.map((raffle) => (
             <Option key={raffle.id} value={raffle.id}>

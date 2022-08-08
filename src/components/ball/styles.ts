@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const UniqueBall = styled.div`
+export const UniqueBall = styled.li`
   border-radius: 50%;
   background: white;
   -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
@@ -16,7 +16,7 @@ export const UniqueBall = styled.div`
   position: relative;
   margin: 5px;
 `;
-export const Balls = styled.div`
+export const Balls = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
