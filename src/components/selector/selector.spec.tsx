@@ -1,5 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
 import Selector from './selector';
 
 describe('PrizeDraw component', () => {
@@ -22,13 +21,5 @@ describe('PrizeDraw component', () => {
     const mockFn = jest.fn().mockReturnValue(reflle);
     const typeOfReflle = screen.queryAllByRole('option');
     expect(typeOfReflle).toHaveLength(mockFn.length);
-  });
-});
-describe('Dropdown', () => {
-  it('Quina', async () => {
-    render(<Selector />);
-
-    const select = await screen.queryAllByRole('option');
-    expect(select).toHaveTextContent('QUINA');
   });
 });

@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import PrizeDraw from './prize-draw';
 
 describe('PrizeDraw component', () => {
@@ -7,10 +7,10 @@ describe('PrizeDraw component', () => {
     expect(container).toBeInTheDocument();
   });
 
-  it('Group of balls', () => {
-    const { container } = render(<PrizeDraw />);
-    expect(
-      container.querySelector('#root > div > div:nth-child(2) > div > div'),
-    );
+  it('Group of balls', async () => {
+    render(<PrizeDraw />);
+
+    const view = await screen.getByRole('list');
+    expect(view).toBeInTheDocument();
   });
 });

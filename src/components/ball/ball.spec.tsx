@@ -26,7 +26,7 @@ describe('List with elements', () => {
     'lotomania',
     'timemania',
   ];
-  it('render without elements', () => {
+  it('render with one or more elements', () => {
     render(<Ball />);
 
     const mockFn = jest.fn().mockReturnValue(reflle);

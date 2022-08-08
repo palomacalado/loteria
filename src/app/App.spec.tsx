@@ -24,4 +24,11 @@ describe('App component', () => {
     expect(view).toBeInTheDocument();
     await act(() => promise);
   });
+
+  it('Prize Draw', async () => {
+    render(<App />);
+
+    const view = await screen.getByRole('list');
+    expect(view).toBeInTheDocument();
+  });
 });
