@@ -26,5 +26,6 @@ export const Balls = styled.ul`
   width: 80%;
   @media only screen and (max-width: 480px) {
     width: 100%;
+    padding: 0;
   }
 `;

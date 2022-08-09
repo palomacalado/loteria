@@ -13,9 +13,9 @@ export const Mensage = styled.div`
   right: 27%;
   text-align: center;
   @media only screen and (max-width: 480px) {
-    bottom: 3%;
-    left: 0%;
-    right: 0%;
+    bottom: 1%;
+    left: 15%;
+    width: 70%;
   }
   @media only screen and (width: 600px) {
     left: 20%;

@@ -2,13 +2,13 @@ import { render, screen } from '@testing-library/react';
 import Ball from './ball';
 
 describe('Ball component', () => {
-  it('Drawn ball', () => {
+  test('Drawn ball', () => {
     const { container } = render(<Ball />);
     expect(container).toBeInTheDocument();
   });
 
   describe('Void list', () => {
-    it('Void list', () => {
+    test('Void list', () => {
       render(<Ball />);
 
       const items = screen.queryAllByRole('listitem');
@@ -26,7 +26,7 @@ describe('List with elements', () => {
     'lotomania',
     'timemania',
   ];
-  it('render with one or more elements', () => {
+  test('render with one or more elements', () => {
     render(<Ball />);
 
     const mockFn = jest.fn().mockReturnValue(reflle);

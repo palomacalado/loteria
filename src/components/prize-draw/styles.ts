@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
 export const Organization = styled.div`
-  width: 50%;
+  width: 60%;
   heigth 30% ;
   @media only screen and (max-width: 480px) {
-    width: 90%;
+    width: 80%;
     
   }
   @media only screen and (min-width: 600px) {
     padding: 4rem;
-    width: 90%;
   }
 `;

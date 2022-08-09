@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Selector from './selector';
 
 describe('Selector component', () => {
@@ -11,12 +11,12 @@ describe('Selector component', () => {
     'timemania',
   ];
 
-  it('Drawn Selector', () => {
+  test('Drawn Selector', () => {
     const { container } = render(<Selector />);
     expect(container).toBeInTheDocument();
   });
 
-  it('Options of reflle', () => {
+  test('Options of reflle', () => {
     render(<Selector />);
 
     const mockFn = jest.fn().mockReturnValue(reflle);
