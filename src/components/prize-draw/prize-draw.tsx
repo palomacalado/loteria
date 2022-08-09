@@ -33,6 +33,7 @@ export default function PrizeDraw(): JSX.Element {
       numbersOfBalls = 6;
       break;
   }
+
   function sortNumbers(list: number[]) {
     let index = 0;
     const reflleNumbers = [];
@@ -40,6 +41,7 @@ export default function PrizeDraw(): JSX.Element {
 
     while (allIndex.length !== numbersOfBalls) {
       index = Math.ceil(Math.random() * list.length - 1);
+
       while (allIndex.indexOf(index) >= 0) {
         index = Math.ceil(Math.random() * list.length - 1);
       }
@@ -53,18 +55,23 @@ export default function PrizeDraw(): JSX.Element {
   }
 
   useEffect(() => {
-    getLoteriasConcursos().then((response) => {
-      response.map((contest: { loteriaId: number; concursoId: string }) => {
-        if (contest.loteriaId === reflleId) {
-          setContestId(contest.concursoId);
-        }
-        return 0;
-      });
+    async function fetchData() {
+      const lotteriesContests = await getLoteriasConcursos();
 
-      getConcursos(contestId).then((data) => {
-        sortNumbers(data.numeros);
-      });
-    });
+      lotteriesContests.map(
+        (contest: { loteriaId: number; concursoId: string }) => {
+          if (contest.loteriaId === reflleId) {
+            setContestId(contest.concursoId);
+          }
+          return 0;
+        },
+      );
+      const contests = await getConcursos(contestId);
+
+      sortNumbers(contests.numeros);
+    }
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [contestId, reflleId, setBall, setContestId]);
 
   return (

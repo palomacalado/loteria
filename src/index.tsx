@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css';
 import { ColorContextProvider } from './contexts/color-reffle';
 import { ReflleContextProvider } from './contexts/reflle';
 import { BallContextProvider } from './contexts/balls';

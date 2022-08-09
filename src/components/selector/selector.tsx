@@ -31,13 +31,13 @@ export default function Selector(): JSX.Element {
   const [typesOfRaffle, setTypesOfRaffle] = useState<Raffle[]>();
   const { setBackgroundColor } = useContext(ColorContext);
   const { setReflleId, setImage } = useContext(ReflleContext);
-  const largura = window.screen.width;
+  const screenWidth = window.screen.width;
 
   useEffect(() => {
     async function fetchData() {
-      const raffle = getLoterias();
+      const raffle = await getLoterias();
 
-      setTypesOfRaffle(await raffle);
+      setTypesOfRaffle(raffle);
     }
     fetchData();
   }, []);
@@ -47,32 +47,32 @@ export default function Selector(): JSX.Element {
       case 0:
         setBackgroundColor('#6BEFA3');
         setReflleId(0);
-        largura > 600 ? setImage(megasena) : setImage(megasenamobile);
+        screenWidth > 600 ? setImage(megasena) : setImage(megasenamobile);
         break;
       case 1:
         setBackgroundColor('#8666EF');
         setReflleId(1);
-        largura > 600 ? setImage(quina) : setImage(quinamobile);
+        screenWidth > 600 ? setImage(quina) : setImage(quinamobile);
         break;
       case 2:
         setBackgroundColor('#DD7AC6');
         setReflleId(2);
-        largura > 600 ? setImage(lotofacil) : setImage(lotomobile);
+        screenWidth > 600 ? setImage(lotofacil) : setImage(lotomobile);
         break;
       case 3:
         setBackgroundColor('#FFAB64');
         setReflleId(3);
-        largura > 600 ? setImage(lotomania) : setImage(maniamobile);
+        screenWidth > 600 ? setImage(lotomania) : setImage(maniamobile);
         break;
       case 4:
         setBackgroundColor('#5AAD7D');
         setReflleId(4);
-        largura > 600 ? setImage(timemania) : setImage(timemobile);
+        screenWidth > 600 ? setImage(timemania) : setImage(timemobile);
         break;
       case 5:
         setBackgroundColor('#BFAF83');
         setReflleId(5);
-        largura > 600 ? setImage(diadesorte) : setImage(diamobile);
+        screenWidth > 600 ? setImage(diadesorte) : setImage(diamobile);
         break;
       default:
         break;
@@ -80,7 +80,7 @@ export default function Selector(): JSX.Element {
   };
 
   return (
-    <Content className="dropdown">
+    <Content>
       {typesOfRaffle && (
         <Select
           defaultValue={{ value: '0', label: 'MEGA-SENA' }}

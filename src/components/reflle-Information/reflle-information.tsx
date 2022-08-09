@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ReflleContext } from '../../contexts/reflle';
 import { getConcursos } from '../../services/requests/get-concursos';
 import { Information } from './styles';
@@ -7,7 +7,7 @@ function ReflleInformation() {
   const { contestId } = useContext(ReflleContext);
   const [date, setDate] = useState<string>();
   const [finalDate, setFinalDate] = useState<string>('01/01/2000');
-  const largura = window.screen.width;
+  const screenWidth = window.screen.width;
 
   function formateDate(initialDate: string) {
     // eslint-disable-next-line prefer-const
@@ -19,10 +19,16 @@ function ReflleInformation() {
   }
 
   useEffect(() => {
-    getConcursos(contestId).then((response) => setDate(response.data));
-    if (date) formateDate(date);
+    async function fetchData() {
+      const contests = await getConcursos(contestId);
+      setDate(contests.data);
+      if (date) formateDate(date);
+    }
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [contestId]);
-  return largura > 600 ? (
+
+  return screenWidth > 600 ? (
     <Information>
       CONCURSO <br />
       <b>

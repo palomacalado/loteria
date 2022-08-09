@@ -1,7 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import Selector from './selector';
 
-describe('PrizeDraw component', () => {
+describe('Selector component', () => {
   const reflle: string[] = [
     'mega-sena',
     'quina',
@@ -10,7 +10,8 @@ describe('PrizeDraw component', () => {
     'lotomania',
     'timemania',
   ];
-  it('Drawn PrizeDraw', () => {
+
+  it('Drawn Selector', () => {
     const { container } = render(<Selector />);
     expect(container).toBeInTheDocument();
   });
