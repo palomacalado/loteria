@@ -10,9 +10,9 @@ Essa é a **aplicação web front-end** que mostra os **Resultados das Loterias*
 
 
 A aplicação suporta **6 sorteios**: Mega-sena, Quina, Lotofácil, Lotomania, Timemania e Dia de sorte. 
-Cada sorteio tem seu tema com suas respectivas cores. É responsiva tendo o suporte para mobile, como ilustrado a seguir.
+Cada sorteio tem seu tema com suas respectivas cores. É responsiva tendo o suporte para mobile, como ilustrado a seguir.<br>
 ![Tela mobile](./telas/tela3.jpeg) ![Tela mobile](./telas/tela4.jpeg)
-
+<br>
 
 ### Tecnologias utilizadas
 
