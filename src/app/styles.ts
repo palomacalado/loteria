@@ -74,7 +74,7 @@ export const Numbers = styled.div`
     -webkit-border-top-right-radius: 700px 300px;
     -webkit-border-top-left-radius: 700px 300px;
     -webkit-border-bottom-left-radius: 0;
-    height: 50vh;
+    height: 70vh;
     width: 100vw;
   }
 `;
